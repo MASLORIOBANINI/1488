@@ -1,20 +1,18 @@
-﻿using System;
-using System.Linq;
-
-namespace nigger
+﻿static void Main()
 {
-    class Program
-    {
-        static T[] Foo<T>(T[] array, int n) => array.Take(n).ToArray();
+    Console.WriteLine("Сумма квадратов натуральных чисел.");
+    Console.WriteLine(foo(10));
 
-        static void Main(string[] args)
-        {
-            var arr1 = new int[] { 1, 2, 3 };
-            var arr2 = new char[] { 'x', 'y', 'z' };
-            var arr3 = Foo(arr1, 5);
-            Console.WriteLine(string.Join(" ", arr3));
-            var arr4 = Foo(arr2, 2);
-            Console.WriteLine(string.Join(" ", arr4));
-        }
+}
+static int foo(int n)
+{
+    if (n <= 1)
+        return n;
+    else
+    {
+        int result = 0;
+        for (int i = 1; i <= n; i++)
+            result += Convert.ToInt32(Math.Pow(i, 2));
+        return result;
     }
 }
